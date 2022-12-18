@@ -1,7 +1,4 @@
 #include <iostream>
-
-using namespace std;
-#include <iostream>
 #include <math.h>
 using namespace std;
 class Complex
