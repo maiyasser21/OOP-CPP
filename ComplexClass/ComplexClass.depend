@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1671369541 source:c:\users\dell\desktop\oop-c++\complexclass\main.cpp
+	<iostream>
+	<math.h>
+
