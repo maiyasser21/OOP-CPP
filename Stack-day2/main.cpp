@@ -9,31 +9,37 @@ private:
     int topOfStack;
     int sizeOfStack;
     int *st;
-    //static int counter;
+    static int counter;
 
 public:
 
+    static int getCounter()
+    {
+        return counter;
+    }
+
     Stack (int n)
     {
-        st = new int[n];
         sizeOfStack = n;
-
+        st = new int[sizeOfStack];
         topOfStack = 0;
-        //counter++;
+        counter=0;
 
-        cout<<"This is the constructor"<<endl;
+        cout<<"This is the constructor with counter = "<<counter<<endl;
     };
     ~Stack()
     {
         delete[] st;
-        //counter--;
         cout<<"This is the destructor"<<endl;
+        counter--;
+        cout<<"destructor counter = "<<counter<<endl;
+
     };
 
     void push(int);
     int pop();
     void print();
-    //static int getCounter();
+
 
 };
 
@@ -49,6 +55,7 @@ void Stack::push(int n)
 
         st[topOfStack]=n;
         (topOfStack)++;
+        counter++;
 
 
     }
@@ -78,10 +85,7 @@ void Stack::print()
         cout<< st[i] <<endl;
     }
 }
-/*int Stack::getCounter()
-{
-    return counter;
-}*/
+int Stack::counter=0;
 
 
 int main()
@@ -100,7 +104,7 @@ int main()
     {
         cout<<"The popped value is "<<s1.pop()<<endl;
     }
-    //cout<<"The count is : \n"<< s1.getCounter()<< endl;
+    cout<<"The count is : \n"<< s1.getCounter()<< endl;
 
 
     return 0;
